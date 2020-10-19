@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface VideoService {
     List<Video> findAll();
+    Video findOne();
 }

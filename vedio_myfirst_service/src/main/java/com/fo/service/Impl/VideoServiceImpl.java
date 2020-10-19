@@ -17,4 +17,9 @@ public class VideoServiceImpl implements VideoService {
     public List<Video> findAll() {
         return videoMapper.selectByExample(null);
     }
+
+    @Override
+    public Video findOne() {
+        return null;
+    }
 }
