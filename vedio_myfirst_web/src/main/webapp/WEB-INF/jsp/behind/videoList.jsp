@@ -298,14 +298,14 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${page.rows}" var="video" varStatus="status">
+            <c:forEach items="${page.list}" var="video" varStatus="status">
                 <tr>
                     <td><input type="checkbox" name="ids" value="${video.id}"
                                onclick="selectOne(this)"/></td>
                     <td>${status.count}</td>
                     <td>${video.title}</td>
                     <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">${video.detail}</td>
-                    <td>${video.speaker.speakerName}</td>
+                    <td>${video.speakerId}</td><%--<td>${video.speaker.speakerName}</td>--%>
                     <td>${video.time}</td>
                     <td>${video.playNum}</td>
                     <td><a href="${pageContext.request.contextPath}/video/edit?id=${video.id}"><span
@@ -325,11 +325,11 @@
 
     </form>
 </div>
-<div class="container">
-    <div class="navbar-right" style="padding-right: 17px">
+<%--<div class="container">
+    &lt;%&ndash;<div class="navbar-right" style="padding-right: 17px">
         <p:page url="${pageContext.request.contextPath}/video/list"></p:page>
-    </div>
-</div>
+    </div>&ndash;%&gt;
+</div>--%>
 
 
 </body>
