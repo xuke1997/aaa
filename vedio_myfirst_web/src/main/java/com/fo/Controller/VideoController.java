@@ -1,4 +1,4 @@
-package com.fo.beforeController;
+package com.fo.Controller;
 
 import com.fo.pojo.Video;
 import com.fo.service.VideoService;
