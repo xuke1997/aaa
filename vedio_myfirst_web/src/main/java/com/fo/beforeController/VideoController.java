@@ -1,4 +1,4 @@
-package com.fo.controller;
+package com.fo.beforeController;
 
 import com.fo.pojo.Video;
 import com.fo.service.VideoService;
@@ -18,6 +18,6 @@ public class VideoController {
     public String findAll() {
         List<Video> all = videoService.findAll();
 
-        return "/WEB-INF/jsp/before/index.jsp";
+        return "/WEB-INF/jsp/behind/login.jsp";
     }
 }
