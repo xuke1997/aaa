@@ -73,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, time, speaker_id, course_id, video_url, image_url, play_num
+    id, title, time, speaker_id, course_id, video_url, image_url, play_num ,detail
   </sql>
   <sql id="Blob_Column_List" >
     detail
@@ -94,7 +94,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fo.pojo.VideoExample" >
+  <select id="selectByExample" resultMap="ResultMapWithBLOBs" parameterType="com.fo.pojo.VideoExample" >
     select
     <if test="distinct" >
       distinct
