@@ -35,4 +35,24 @@ public class UserServiceImpl implements UserService {
        int i = Integer.parseInt(id);
        return userMapper.selectByPrimaryKey(i);
     }
+
+    @Override
+    public User selectUserByEmail(String email) {
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andEmailEqualTo(email);
+        List<User> userList = userMapper.selectByExample(userExample);
+        User user = userList.get(0);
+        return user;
+    }
+
+    @Override
+    public void insertUser(User user) {
+        userMapper.insert(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userMapper.updateByPrimaryKey(user);
+    }
 }

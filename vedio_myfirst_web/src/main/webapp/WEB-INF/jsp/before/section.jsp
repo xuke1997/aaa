@@ -109,8 +109,8 @@
                 <div class="right">
                     <p class="right-title">${video.title}</p>
                     <div class="avatar">
-                        <span style="background-image: url(${video.speaker.headImgUrl})"></span>
-                        <p><b>讲师：${video.speaker.speakerName}</b><br><i>${video.speaker.speakerDesc}</i></p>
+                        <span style="background-image: url(${speaker.headImgUrl})"></span>
+                        <p><b>讲师：${speaker.speakerName}</b><br><i>${speaker.speakerDesc}</i></p>
                     </div>
                     <p class="video-intro">
                         <span>本节内容：</span> ${video.detail}
@@ -130,12 +130,12 @@
         <div class="container">
             <p class="title">目录</p>
 
-            <c:forEach items="${course.videoList}" var="video">
+            <c:forEach items="${course.videos}" var="video">
                 <div class="chapter" onclick="load(${video.id})">
                     <p class="biaoti"><a
                             href="showVideo?videoId=${video.id}&subjectName=${subjectName}">${video.title}</a></p>
                     <p class="lecturer">${video.detail}</p>
-                    <p class="lecturer">讲师：${video.speaker.speakerName}</p>
+                    <p class="lecturer">讲师：${speaker.speakerName}</p>
                     <div class="v-info">
                         <span class="count"><img src="${pageContext.request.contextPath}/img/count.png"
                                                  alt="">${video.playNum}</span>

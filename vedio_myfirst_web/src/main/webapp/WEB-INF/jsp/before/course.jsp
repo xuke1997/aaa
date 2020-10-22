@@ -121,7 +121,7 @@
     <div class="classify">
         <div class="container">
             <!--章-->
-            <c:forEach items="${subject.courseList}" var="course">
+            <c:forEach items="${courseList}" var="course">
                 <div class="section">
                     <div class="classifyName">
                         <p class="title title-first">${course.courseTitle}</p>
@@ -132,7 +132,7 @@
                     </div>
                     <ul>
                         <!--节-->
-                        <c:forEach items="${course.videoList}" var="video" varStatus="i">
+                        <c:forEach items="${course.videos}" var="video" varStatus="i">
                             <li class="section-main" onclick="getVideo(${video.id})">
                                 <div class="thum" style="background-image: url('${video.imageUrl}')">
                                     <!--http://vod.chengjian100.com/gkk/h5/c1/image/course/01.jpg-->

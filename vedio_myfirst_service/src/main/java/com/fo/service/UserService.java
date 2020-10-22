@@ -12,6 +12,8 @@ import java.util.List;
  */
 public interface UserService {
     public List<User> login(User user);
-
     public User findOne(String id);
+    public User selectUserByEmail(String email);
+    void insertUser(User user);
+    void updateUser(User user);
 }

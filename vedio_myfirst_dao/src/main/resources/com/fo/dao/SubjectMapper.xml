@@ -4,7 +4,47 @@
   <resultMap id="BaseResultMap" type="com.fo.pojo.Subject" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="subject_name" property="subjectName" jdbcType="VARCHAR" />
+<!--    <collection property="courseList" ofType="com.fo.pojo.Course">-->
+<!--      <id column="id" property="id"/>-->
+<!--      <result column="course_title" property="courseTitle"/>-->
+<!--      <result column="course_desc" property="courseDesc"/>-->
+<!--      <result column="subject_id" property="subjectId"/>-->
+<!--      <collection property="videoList" ofType="com.fo.pojo.Video">-->
+<!--        <id column="id" property="id"/>-->
+<!--        <result column="title" property="title"/>-->
+<!--        <result column="detail" property="detail"/>-->
+<!--        <result column="time" property="time"/>-->
+<!--        <result column="speaker_id" property="speakerId"/>-->
+<!--        <result column="course_id" property="courseId"/>-->
+<!--        <result column="video_url" property="videoUrl"/>-->
+<!--        <result column="image_url" property="imageUrl"/>-->
+<!--        <result column="play_num" property="playNum"/>-->
+<!--      </collection>-->
+<!--    </collection>-->
   </resultMap>
+
+<!--  <select id="selectSubjectById" parameterType="String" resultMap="BaseResultMap">-->
+<!--    SELECT-->
+<!--      `subject`.id,-->
+<!--      `subject`.subject_name,-->
+<!--      course.id,-->
+<!--      course.course_title,-->
+<!--      course.course_desc,-->
+<!--      video.id,-->
+<!--      video.title,-->
+<!--      video.detail,-->
+<!--      video.time,-->
+<!--      video.speaker_id,-->
+<!--      video.video_url,-->
+<!--      video.image_url,-->
+<!--      video.play_num-->
+<!--    FROM-->
+<!--      `subject`-->
+<!--        LEFT JOIN course ON `subject`.id = subject_id-->
+<!--        LEFT JOIN video ON course.id = video.course_id-->
+<!--    WHERE-->
+<!--      `subject`.id = #{id}-->
+<!--  </select>-->
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >

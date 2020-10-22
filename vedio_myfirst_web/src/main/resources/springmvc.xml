@@ -30,4 +30,9 @@
                         <property name="suffix" value=""></property>
                 </bean>
 
+        <!--配置文件解析器对象-->
+        <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+                <property name="maxUploadSize" value="50000000" />
+        </bean>
+
 </beans>

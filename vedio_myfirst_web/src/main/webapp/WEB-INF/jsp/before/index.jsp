@@ -293,4 +293,88 @@
 </body>
 
 <script src="${pageContext.request.contextPath}/js/index.js"></script>
+<script type="text/javascript">
+
+    $("#loginout").click(function () {
+
+        $.get("/user/loginOut", null, function () {
+            $("#regBlock").css("display", "block");
+            $("#userBlock").css("display", "none");
+        });
+
+    });
+
+    function commitLogin() {
+        //alert("login");
+        var email = $("#loginEmail").val();
+        var password = $("#loginPassword").val();
+        if (null != email && email != "" && null != password && password != "") {
+            var params = $("#loginForm").serialize();
+            // alert(params);
+            // post要小写
+            $.post("user/loginUser", params, function (data) {
+                // alert(data);
+                if (data == 'success') {
+
+                    //登录框消失
+                    $("#login").addClass("hidden");
+
+                    $("#account").text($("#loginEmail").val());
+                    //将注册的user信息展示
+                    $("#regBlock").css("display", "none");
+                    $("#userBlock").css("display", "block");
+
+                    $("#isLogin").val(1);
+                }
+            });
+
+            return false;
+        }
+
+        return false;
+    }
+
+
+    var regIsCommitEmail = false;
+    var regIsCommitPsw = false;
+    function commitRegForm() {
+
+        var code = $("input[name='yzm']").val();
+         //alert(code);
+        // alert(regIsCommitEmail+","+regIsCommitPsw);
+        if (regIsCommitPsw) {
+            //用js提交表单
+            // $("#regForm").commit();
+
+            $.ajax({
+
+                url: "/user/insertUser",
+                data: $("#regForm").serialize(),
+                type: "POST",
+                success: function (data) {
+                    if (data == 'success') {
+                        //注册框消失
+                        $("#reg").addClass("hidden");
+
+                        $("#account").text($("#regEmail").val());
+                        //将注册的user信息展示
+                        $("#regBlock").css("display", "none");
+                        $("#userBlock").css("display", "block");
+
+                    }
+                },
+                error: function () {
+                    alert("联系管理员");
+                }
+
+            });
+
+            return false;
+
+        } else {
+            return false;
+        }
+
+    }
+</script>
 </html>

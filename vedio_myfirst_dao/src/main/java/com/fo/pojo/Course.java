@@ -1,5 +1,7 @@
 package com.fo.pojo;
 
+import java.util.List;
+
 public class Course {
     private Integer id;
 
@@ -8,6 +10,17 @@ public class Course {
     private Integer subjectId;
 
     private String courseDesc;
+
+    private List<Video> videos;
+
+    public List<Video> getVideos() {
+        return videos;
+    }
+
+    public void setVideos(List<Video> videos) {
+        this.videos = videos;
+    }
+
 
     public Integer getId() {
         return id;

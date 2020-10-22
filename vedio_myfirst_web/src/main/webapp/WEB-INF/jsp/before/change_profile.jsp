@@ -85,12 +85,12 @@
                 </div>
                 <div id="user_bar">
                     <a href="${pageContext.request.contextPath}/user/showMyProfile">
-                      <c:if test="${empty user.imgUrl}">
+                      <c:if test="${empty user.imgurl}">
                          <img id="avatar" src="${pageContext.request.contextPath}/img/avatar_lg.png" alt="">
                       </c:if>
                       
-                      <c:if test="${not empty user.imgUrl}">
-                         <img id="avatar" src="http://localhost:8081/video/${user.imgUrl}" alt="">
+                      <c:if test="${not empty user.imgurl}">
+                         <img id="avatar" src="http://localhost:8080/img/${user.imgurl}" alt="">
                       </c:if>
                        
                     </a>
@@ -114,14 +114,14 @@
                     <h3><a href="${pageContext.request.contextPath}/user/showMyProfile">返回个人中心</a></h3>
                     <div class="proflle_tab_workplace clearfix">
                         <div class="profile_avatar_area">
-                            <img width="180px" height="180px"  src="http://localhost:8081/video/${user.imgUrl}">
+                            <img width="180px" height="180px"  src="http://localhost:8080/img/${user.imgurl}">
                         </div>
                         <div class="profile_ifo_area">
                             <!--http://localhost/video/user/changeProfile-->
                             <form action="updateUser" method="post">
                                 <input name="id" type="hidden" value="${user.id}">
                                 <div class="form_group">
-                                    <span class="dd">昵&#x3000;称：</span><input type="text" name="nickName" value="${user.nickName}" >
+                                    <span class="dd">昵&#x3000;称：</span><input type="text" name="nickname" value="${user.nickname}" >
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">性&#x3000;别：</span>
@@ -135,6 +135,8 @@
                                 <div class="form_group">
                                     <span class="dd">邮&#x3000;箱：</span>
                                     <span >${user.email}</span>
+<%--                                    <input type="hidden" name="email" value="${user.email}"/>--%>
+<%--                                    <input type="hidden" name="password" value="${user.password}"/>--%>
                                 </div>
                                 <div class="form_group">
                                     <span class="dd">所在地：</span>

@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, course_title, subject_id
+    id, course_title, subject_id,course_desc
   </sql>
   <sql id="Blob_Column_List" >
     course_desc
@@ -89,7 +89,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.fo.pojo.CourseExample" >
+  <select id="selectByExample" resultMap="ResultMapWithBLOBs" parameterType="com.fo.pojo.CourseExample" >
     select
     <if test="distinct" >
       distinct

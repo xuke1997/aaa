@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SubjectMapper {
+    Subject selectSubjectById(String id);
+
     int countByExample(SubjectExample example);
 
     int deleteByExample(SubjectExample example);

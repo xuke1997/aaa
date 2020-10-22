@@ -11,8 +11,8 @@ import java.util.Random;
  */
 public final class MailUtils {
 
-    private static final String USER = "viejava1010@163.com"; // 发件人称号，同邮箱地址
-    private static final String PASSWORD = "CRZIVPSMQJVPVMSB"; // 如果是qq邮箱可以使户端授权码
+    private static final String USER = "1095632367@qq.com"; // 发件人称号，同邮箱地址
+    private static final String PASSWORD = "splnmorkpcoxbaba"; // 如果是qq邮箱可以使户端授权码
 
     /**
      * @param to    收件人邮箱
